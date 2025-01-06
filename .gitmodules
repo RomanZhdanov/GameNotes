@@ -1,0 +1,3 @@
+[submodule "backend/lib/RawgSharp"]
+	path = backend/lib/RawgSharp
+	url = https://github.com/RomanZhdanov/RawgSharp.git
