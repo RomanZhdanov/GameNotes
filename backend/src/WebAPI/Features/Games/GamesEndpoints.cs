@@ -9,14 +9,14 @@ public static class GamesEndpoints
 {
     public static void AddGamesEndpoints(this WebApplication app)
     {
-        app.MapGet("/games/search", GetGames);
+        app.MapGet("/games", GetGamesPage);
     }
 
-    private static async Task<Results<Ok<PaginatedList<Game>>, ProblemHttpResult>> GetGames(
-        [FromQuery] int page, int pageSize, string input,
+    private static async Task<Results<Ok<PaginatedList<Game>>, ProblemHttpResult>> GetGamesPage(
+        [AsParameters] GamesPageRequest request,
         [FromServices] GamesSourceService gamesService)
     {
-        var result = await gamesService.SearchGamesAsync(page, pageSize, input);
+        var result = await gamesService.GetGamesPageAsync(request.Page, request.PageSize, request.Search);
         
         return TypedResults.Ok(result);
     }

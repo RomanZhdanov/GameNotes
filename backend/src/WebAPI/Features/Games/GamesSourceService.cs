@@ -8,7 +8,7 @@ public class GamesSourceService(IRawgApi rawgApi)
 {
     private readonly IRawgApi _rawgApi = rawgApi;
 
-    public async Task<PaginatedList<Game>> SearchGamesAsync(int page, int pageSize, string searchInput)
+    public async Task<PaginatedList<Game>> GetGamesPageAsync(int page, int pageSize, string searchInput)
     {
         var response = await _rawgApi.GetListOfGamesAsync(page, pageSize, searchInput);
         

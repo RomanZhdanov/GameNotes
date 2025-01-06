@@ -1,6 +1,6 @@
 namespace GameNotes.WebAPI.Features.Games;
 
-public sealed record GamesSearchRequest(
+public record struct GamesPageRequest(
     int Page, 
     int PageSize, 
-    string Input);
+    string Search);
