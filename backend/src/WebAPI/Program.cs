@@ -1,6 +1,8 @@
+using GameNotes.WebAPI.Games;
+
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
+app.AddGamesEndpoints();
 
 app.Run();

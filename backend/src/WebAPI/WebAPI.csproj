@@ -4,6 +4,8 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>GameNotes.WebAPI</AssemblyName>
+    <RootNamespace>GameNotes.WebAPI</RootNamespace>
   </PropertyGroup>
 
 </Project>
