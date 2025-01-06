@@ -6,6 +6,15 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>GameNotes.WebAPI</AssemblyName>
     <RootNamespace>GameNotes.WebAPI</RootNamespace>
+    <UserSecretsId>1bb7f318-a7a9-4aad-be81-d37d7261e1f4</UserSecretsId>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\lib\RawgSharp\src\RawgSharp\RawgSharp.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+  </ItemGroup>
 
 </Project>

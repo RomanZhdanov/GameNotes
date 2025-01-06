@@ -1,4 +1,4 @@
-namespace GameNotes.WebAPI.Games;
+namespace GameNotes.WebAPI.Features.Games;
 
 public class GamesResult
 {
