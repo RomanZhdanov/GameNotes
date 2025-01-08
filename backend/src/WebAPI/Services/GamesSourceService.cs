@@ -2,9 +2,9 @@ using GameNotes.WebAPI.Entities;
 using GameNotes.WebAPI.Features.Shared;
 using RawgSharp;
 
-namespace GameNotes.WebAPI.Features.Games;
+namespace GameNotes.WebAPI.Services;
 
-public class GamesSourceService(IRawgApi rawgApi)
+public class GamesSourceService(IRawgApi rawgApi) : IGamesSourceService
 {
     private readonly IRawgApi _rawgApi = rawgApi;
 
