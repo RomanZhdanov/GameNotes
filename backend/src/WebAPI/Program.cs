@@ -1,6 +1,8 @@
 using System.Reflection;
 using GameNotes.WebAPI.Database;
 using GameNotes.WebAPI.Extensions;
+using GameNotes.WebAPI.Features.Games;
+using GameNotes.WebAPI.Features.Journals;
 using GameNotes.WebAPI.Services;
 using Microsoft.EntityFrameworkCore;
 using RawgSharp;
@@ -17,6 +19,8 @@ builder.Services.AddMediatR(cfg =>
 });
 builder.Services.RegisterEndpointsFromAssembly(Assembly.GetExecutingAssembly());
 builder.Services.AddScoped<IGamesSourceService, GamesSourceService>();
+builder.Services.AddScoped<GamesRepository>();
+builder.Services.AddScoped<JournalsRepository>();
 
 var app = builder.Build();
 
