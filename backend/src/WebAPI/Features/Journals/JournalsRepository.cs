@@ -28,6 +28,8 @@ public class JournalsRepository
         }
         
         return await query
+            .Include(j => j.Game)
+            .Include(j => j.Platform)
             .Skip((page - 1) * pageSize)
             .Take(pageSize)
             .ToListAsync(cancellationToken);

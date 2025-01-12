@@ -13,7 +13,7 @@ public class Endpoint : IEndpoint
     }
 
     private static async Task<Results<Ok<PaginatedList<JournalDto>>, ProblemHttpResult>> Handle(
-        [AsParameters] GetJournalsPaageQuery query,
+        [AsParameters] GetJournalsPageQuery query,
         [FromServices] ISender mediator,
         CancellationToken cancellationToken)
     {

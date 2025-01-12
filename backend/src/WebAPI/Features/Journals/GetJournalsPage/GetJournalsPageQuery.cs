@@ -3,9 +3,9 @@ using MediatR;
 
 namespace GameNotes.WebAPI.Features.Journals.GetJournalsPage;
 
-public record GetJournalsPaageQuery(int Page, int PageSize) : IRequest<PaginatedList<JournalDto>>;
+public record GetJournalsPageQuery(int Page, int PageSize) : IRequest<PaginatedList<JournalDto>>;
 
-public class Handler : IRequestHandler<GetJournalsPaageQuery, PaginatedList<JournalDto>>
+public class Handler : IRequestHandler<GetJournalsPageQuery, PaginatedList<JournalDto>>
 {
     private readonly JournalsRepository _repository;
 
@@ -14,10 +14,10 @@ public class Handler : IRequestHandler<GetJournalsPaageQuery, PaginatedList<Jour
         _repository = repository;
     }
 
-    public async Task<PaginatedList<JournalDto>> Handle(GetJournalsPaageQuery request, CancellationToken cancellationToken)
+    public async Task<PaginatedList<JournalDto>> Handle(GetJournalsPageQuery request, CancellationToken cancellationToken)
     {
         var journals = (await _repository.GetPageAsync(request.Page, request.PageSize, true, cancellationToken))
-            .Select(j => new JournalDto(j.Id, j.Title))
+            .Select(j => new JournalDto(j.Id, j.Game.Name, j.Platform.Name, j.Title))
             .ToList();
 
         var count = await _repository.CountAsync();
